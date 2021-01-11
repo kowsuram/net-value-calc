@@ -1,0 +1,26 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<configuration>
+
+
+    <appender name = "svcAppender" class = "ch.qos.logback.core.FileAppender">
+        <File>C:\java-workspace\service-communication\src\main\resources\logs\service.out</File>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.sss'Z'}] [%C] [%t] [%L] [%-5p] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name = "promoAppender" class = "ch.qos.logback.core.FileAppender">
+        <File>C:\java-workspace\service-communication\src\main\resources\logs\promotions.out</File>
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd'T'HH:mm:ss.sss'Z'}] [%C] [%t] [%L] [%-5p] %m%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="SERVICE_LOGS" level="DEBUG" additivity="false">
+        <appender-ref ref="svcAppender" />
+    </logger>
+    <logger name="PROMO_LOGS" level="DEBUG" additivity="false">
+        <appender-ref ref="promoAppender" />
+    </logger>
+</configuration>
